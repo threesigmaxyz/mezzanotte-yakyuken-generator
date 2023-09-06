@@ -27,7 +27,9 @@ def generate_nft() -> str:
     background_color = select_trait_value(metadata["backgroundColors"])
     base_fill_color = select_trait_value(metadata["baseFillColors"])
     initial_shadow_color = select_trait_value(metadata["initialShadowColors"])
+    initial_shadow_brightness = select_trait_value(metadata["initialShadowBrightness"])
     final_shadow_color = select_trait_value(metadata["finalShadowColors"])
+    final_shadow_brightness = select_trait_value(metadata["finalShadowBrightness"])
     glow_time = select_trait_value(metadata["glowTimes"])
 
     # Select yak trait values.
@@ -54,11 +56,11 @@ def generate_nft() -> str:
         <style>
             @keyframes glow {{
                 0% {{
-                    filter: drop-shadow(16px 16px 20px {initial_shadow_color}) brightness(100%);
+                    filter: drop-shadow(16px 16px 20px {initial_shadow_color}) brightness({initial_shadow_brightness}%);
                 }}
 
                 to {{
-                    filter: drop-shadow(16px 16px 20px {final_shadow_color}) brightness(200%);
+                    filter: drop-shadow(16px 16px 20px {final_shadow_color}) brightness({final_shadow_brightness}%);
                 }}
             }}
 

@@ -1,164 +1,250 @@
 {
-    "yaks": [
-        {
-            "value" : {
-                "path": "resources/yak/ami.svg",
-                "viewBox": "0 0 300 500",
-                "fontSize": "36",
-                "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/yak/christine.svg",
-                "viewBox": "0 0 500 470",
-                "fontSize": "36",
-                "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/yak/takechi.svg",
-                "viewBox": "0 0 700 800",
-                "fontSize": "60",
-                "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/yak/tennis.svg",
-                "viewBox": "0 0 2000 1300",
-                "fontSize": "50",
-                "iconSize": "width=\"500px\" height=\"500px\" viewbox=\"0 0 500 500\""
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/yak/yak2.svg",
-                "viewBox": "0 0 230 300",
-                "fontSize": "20",
-                "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
-            },
-            "weight": 20
-        }
-    ],
-    "icons": [
-        {
-            "value" : {
-                "path": "resources/icon/bell.svg",
-                "color": "blue"
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/icon/burger.svg",
-                "color": "yellow"
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/icon/doughnut.svg",
-                "color": "red"
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/icon/trash.svg",
-                "color": "grey"
-            },
-            "weight": 20
-        },
-        {
-            "value" : {
-                "path": "resources/icon/empty.svg",
-                "color": "black"
-            },
-            "weight": 20
-        }
-    ],
-    "metadata": {
-        "backgroundColors": [
-            { "value": "black", "weight": 16 },
-            { "value": "aquamarine", "weight": 12 },
-            { "value": "white", "weight": 12 },
-            { "value": "red", "weight": 12 },
-            { "value": "blue", "weight": 12 },
-            { "value": "yellow", "weight": 12 },
-            { "value": "green", "weight": 12 },
-            { "value": "pink", "weight": 12 }
-        ],
-        "initialShadowColors": [
-            { "value": "black", "weight": 16 },
-            { "value": "aquamarine", "weight": 12 },
-            { "value": "white", "weight": 12 },
-            { "value": "red", "weight": 12 },
-            { "value": "blue", "weight": 12 },
-            { "value": "yellow", "weight": 12 },
-            { "value": "green", "weight": 12 },
-            { "value": "pink", "weight": 12 }
-        ],
-        "finalShadowColors": [
-            { "value": "black", "weight": 16 },
-            { "value": "aquamarine", "weight": 12 },
-            { "value": "white", "weight": 12 },
-            { "value": "red", "weight": 12 },
-            { "value": "blue", "weight": 12 },
-            { "value": "yellow", "weight": 12 },
-            { "value": "green", "weight": 12 },
-            { "value": "pink", "weight": 12 }
-        ],
-        "baseFillColors": [
-            { "value": "black", "weight": 16 },
-            { "value": "aquamarine", "weight": 12 },
-            { "value": "white", "weight": 12 },
-            { "value": "red", "weight": 12 },
-            { "value": "blue", "weight": 12 },
-            { "value": "yellow", "weight": 12 },
-            { "value": "green", "weight": 12 },
-            { "value": "pink", "weight": 12 }
-        ],
-        "glowTimes": [
-            { "value": "0.3", "weight": 25 },
-            { "value": "2", "weight": 25 },
-            { "value": "5", "weight": 25 },
-            { "value": "9", "weight": 25 }
-        ],
-        "yakFillColors": [
-            { "value": "black", "weight": 20 },
-            { "value": "white", "weight": 16 },
-            { "value": "red", "weight": 16 },
-            { "value": "blue", "weight": 16 },
-            { "value": "yellow", "weight": 16 },
-            { "value": "pink", "weight": 16 }
-        ],
-        "hoverColors": [
-            { "value": "black", "weight": 20 },
-            { "value": "white", "weight": 16 },
-            { "value": "red", "weight": 16 },
-            { "value": "blue", "weight": 16 },
-            { "value": "yellow", "weight": 16 },
-            { "value": "pink", "weight": 16 }
-        ],
-        "iconLocations": [
-            { "value": "x=\"5%\" y=\"5%\"", "weight": 100 }
-        ],
-        "texts": [
-            { "value": "石", "weight": 33 },
-            { "value": "紙", "weight": 33 },
-            { "value": "はさみ", "weight": 34 }
-        ],
-        "textLocations": [
-            { "value": "\"start\" x=\"5%\" y=\"10%\"", "weight": 25 },
-            { "value": "\"end\" x=\"95%\" y=\"90%\"", "weight": 25 },
-            { "value": "\"end\" x=\"95%\" y=\"10%\"", "weight": 25 },
-            { "value": "\"start\" x=\"5%\" y=\"90%\"", "weight": 25 }
-        ]
+  "yaks": [
+    {
+      "value": {
+        "path": "resources/yak/ami.svg",
+        "viewBox": "0 0 300 500",
+        "fontSize": "0",
+        "iconSize": "width=\"50px\" height=\"50px\" viewbox=\"0 0 50 50\""
+      },
+      "weight": 2
+    },
+    {
+      "value": {
+        "path": "resources/yak/christine.svg",
+        "viewBox": "0 0 500 470",
+        "fontSize": "0",
+        "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 8
+    },
+    {
+      "value": {
+        "path": "resources/yak/redlady.svg",
+        "viewBox": "0 0 1000 600",
+        "fontSize": "0",
+        "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 5
+    },
+    {
+      "value": {
+        "path": "resources/yak/josei.svg",
+        "viewBox": "0 0 1000 600",
+        "fontSize": "0",
+        "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 15
+    },
+    {
+      "value": {
+        "path": "resources/yak/takechi.svg",
+        "viewBox": "0 0 700 800",
+        "fontSize": "0",
+        "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 5
+    },
+    {
+      "value": {
+        "path": "resources/yak/sport.svg",
+        "viewBox": "215.709 2.143 566.847 499.207",
+        "fontSize": "0",
+        "iconSize": "width=\"300px\" height=\"100px\" viewbox=\"115.709 1.143 466.847 499.207\""
+      },
+      "weight": 10
+    },
+    {
+      "value": {
+        "path": "resources/yak/thinker.svg",
+        "viewBox": "0 0 1000 600",
+        "fontSize": "0",
+        "iconSize": "width=\"100px\" height=\"100px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 20
+    },
+    {
+      "value": {
+        "path": "resources/yak/tennis.svg",
+        "viewBox": "0 0 2000 1300",
+        "fontSize": "0",
+        "iconSize": "width=\"200px\" height=\"200px\" viewbox=\"0 0 200 200\""
+      },
+      "weight": 20
+    },
+    {
+      "value": {
+        "path": "resources/yak/yak2.svg",
+        "viewBox": "0 0 230 300",
+        "fontSize": "0",
+        "iconSize": "width=\"50px\" height=\"50px\" viewbox=\"0 0 100 100\""
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "path": "resources/yak/focusedgirl.svg",
+        "viewBox": "10.551 0.897 786.819 630.439",
+        "fontSize": "0",
+        "iconSize": "width=\"100.00px\" height=\"100.00px\" viewbox=\"10.551 0.897 786.819 630.439\""
+      },
+      "weight": 14
     }
+  ],
+  "icons": [
+    {
+      "value": {
+        "path": "resources/icon/stars.svg",
+        "color": "yellow"
+      },
+      "weight": 10
+    },
+    {
+      "value": {
+        "path": "resources/icon/scribble.svg",
+        "color": "red"
+      },
+      "weight": 5
+    },
+    {
+      "value": {
+        "path": "resources/icon/abstract.svg",
+        "color": "black"
+      },
+      "weight": 10
+    },
+    {
+      "value": {
+        "path": "resources/icon/empty.svg",
+        "color": "transparent"
+      },
+      "weight": 75
+    }
+  ],
+  "metadata": {
+    "backgroundColors": [
+      { "value": "mistyrose", "weight": 5 },
+      { "value": "linen", "weight": 5 },
+      { "value": "mintcream", "weight": 5 },
+      { "value": "peach", "weight": 1 },
+      { "value": "yellow", "weight": 10 },
+      { "value": "lemonchiffon", "weight": 2 },
+      { "value": "black", "weight": 20 },
+      { "value": "thistle1", "weight": 9 },
+      { "value": "aliceblue", "weight": 10 },
+      { "value": "red", "weight": 12 },
+      { "value": "blue4", "weight": 6 },
+      { "value": "azure", "weight": 10 },
+      { "value": "darkseagreen1", "weight": 1 },
+      { "value": "mediumblue", "weight": 1 },
+      { "value": "antiquewhite2", "weight": 1 },
+      { "value": "deepskyblue", "weight": 1 },
+      { "value": "aquamarine3", "weight": 1 }
+    ],
+    "initialShadowColors": [
+      { "value": "orange", "weight": 12 },
+      { "value": "navy", "weight": 12 },
+      { "value": "white", "weight": 12 },
+      { "value": "red", "weight": 12 },
+      { "value": "blue", "weight": 12 },
+      { "value": "yellow", "weight": 24 },
+      { "value": "pink", "weight": 2 },
+      { "value": "cyan3", "weight": 14 }
+    ],
+    "initialShadowBrightness": [
+      { "value": "100", "weight": 100 }
+    ],
+    "finalShadowColors": [
+      { "value": "black", "weight": 16 },
+      { "value": "lavender", "weight": 6 },
+      { "value": "white", "weight": 12 },
+      { "value": "red", "weight": 6 },
+      { "value": "yellow", "weight": 6 },
+      { "value": "mintcream", "weight": 12 },
+      { "value": "paleolivegreen", "weight": 6 },
+      { "value": "mossygreen", "weight": 6 },
+      { "value": "pear", "weight": 12 },
+      { "value": "midblue", "weight": 6 },
+      { "value": "marine", "weight": 6 },
+      { "value": "verylightpink", "weight": 6 }
+    ],
+    "finalShadowBrightness": [
+      { "value": "200", "weight": 100 }
+    ],
+    "baseFillColors": [
+      { "value": "beige", "weight": 7 },
+      { "value": "lime0", "weight": 7 },
+      { "value": "softpink", "weight": 7 },
+      { "value": "waterblue", "weight": 12 },
+      { "value": "lightneon", "weight": 7 },
+      { "value": "wintergreen", "weight": 12 },
+      { "value": "blue", "weight": 12 },
+      { "value": "yellow", "weight": 12 },
+      { "value": "ivory", "weight": 12 },
+      { "value": "cadetblue3", "weight": 6 },
+      { "value": "LightCyan3", "weight": 6 }
+    ],
+    "glowTimes": [
+      { "value": "1", "weight": 4 },
+      { "value": "5", "weight": 2 },
+      { "value": ".1", "weight": 20 },
+      { "value": ".2", "weight": 5 },
+      { "value": "32", "weight": 1 },
+      { "value": "1.5", "weight": 6 },
+      { "value": ".9", "weight": 16 },
+      { "value": "3", "weight": 8 },
+      { "value": "65", "weight": 1 },
+      { "value": "2", "weight": 5 },
+      { "value": "3", "weight": 2 },
+      { "value": "4", "weight": 3 },
+      { "value": "5.5", "weight": 6 },
+      { "value": "6", "weight": 5 },
+      { "value": "7", "weight": 3 },
+      { "value": "8", "weight": 2 },
+      { "value": ".01", "weight": 5 },
+      { "value": ".3", "weight": 4 },
+      { "value": ".4", "weight": 2 }
+    ],
+    "yakFillColors": [
+      { "value": "floralwhite", "weight": 9 },
+      { "value": "lavenderblush", "weight": 9 },
+      { "value": "indianred1", "weight": 9 },
+      { "value": "snow2", "weight": 9 },
+      { "value": "blush", "weight": 16 },
+      { "value": "blue", "weight": 8 },
+      { "value": "verylightpink", "weight": 8 },
+      { "value": "yellow", "weight": 8 },
+      { "value": "orange0", "weight": 8 },
+      { "value": "teal3", "weight": 8 },
+      { "value": "honeydew", "weight": 8 }
+    ],
+    "hoverColors": [
+      { "value": "lightcoral", "weight": 10 },
+      { "value": "mintcream", "weight": 5 },
+      { "value": "white", "weight": 8 },
+      { "value": "red", "weight": 8 },
+      { "value": "blue", "weight": 14 },
+      { "value": "aquamarine2", "weight": 16 },
+      { "value": "honeydew", "weight": 8 },
+      { "value": "lavenderblush", "weight": 4 },
+      { "value": "verylightpink", "weight": 4 },
+      { "value": "peach", "weight": 5 },
+      { "value": "whitesmoke", "weight": 8 },
+      { "value": "neon", "weight": 7 },
+      { "value": "red3", "weight": 2 },
+      { "value": "yellow", "weight": 1 }
+    ],
+    "iconLocations": [{ "value": "x=\"5%\" y=\"5%\"", "weight": 100 }],
+    "texts": [
+      { "value": "石", "weight": 33 },
+      { "value": "紙", "weight": 33 },
+      { "value": "はさみ", "weight": 34 }
+    ],
+    "textLocations": [
+      { "value": "\"start\" x=\"5%\" y=\"10%\"", "weight": 25 },
+      { "value": "\"end\" x=\"95%\" y=\"90%\"", "weight": 25 },
+      { "value": "\"end\" x=\"95%\" y=\"10%\"", "weight": 25 },
+      { "value": "\"start\" x=\"5%\" y=\"90%\"", "weight": 25 }
+    ]
+  }
 }
