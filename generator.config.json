@@ -2,6 +2,7 @@
   "yaks": [
     {
       "value": {
+        "name": "ami",
         "path": "resources/yak/ami.svg",
         "viewBox": "0 0 300 500",
         "fontSize": "0",
@@ -11,6 +12,7 @@
     },
     {
       "value": {
+        "name": "christine",
         "path": "resources/yak/christine.svg",
         "viewBox": "0 0 500 470",
         "fontSize": "0",
@@ -20,6 +22,7 @@
     },
     {
       "value": {
+        "name": "redlady",
         "path": "resources/yak/redlady.svg",
         "viewBox": "0 0 1000 600",
         "fontSize": "0",
@@ -29,6 +32,7 @@
     },
     {
       "value": {
+        "name": "josei",
         "path": "resources/yak/josei.svg",
         "viewBox": "0 0 1000 600",
         "fontSize": "0",
@@ -38,6 +42,7 @@
     },
     {
       "value": {
+        "name": "takechi",
         "path": "resources/yak/takechi.svg",
         "viewBox": "0 0 700 800",
         "fontSize": "0",
@@ -47,6 +52,7 @@
     },
     {
       "value": {
+        "name": "sport",
         "path": "resources/yak/sport.svg",
         "viewBox": "215.709 2.143 566.847 499.207",
         "fontSize": "0",
@@ -56,6 +62,7 @@
     },
     {
       "value": {
+        "name": "thinker",
         "path": "resources/yak/thinker.svg",
         "viewBox": "0 0 1000 600",
         "fontSize": "0",
@@ -65,6 +72,7 @@
     },
     {
       "value": {
+        "name": "tennis",
         "path": "resources/yak/tennis.svg",
         "viewBox": "0 0 2000 1300",
         "fontSize": "0",
@@ -74,6 +82,7 @@
     },
     {
       "value": {
+        "name": "yak2",
         "path": "resources/yak/yak2.svg",
         "viewBox": "0 0 230 300",
         "fontSize": "0",
@@ -83,6 +92,7 @@
     },
     {
       "value": {
+        "name": "focusedgirl",
         "path": "resources/yak/focusedgirl.svg",
         "viewBox": "10.551 0.897 786.819 630.439",
         "fontSize": "0",
@@ -94,6 +104,7 @@
   "icons": [
     {
       "value": {
+        "name": "stars",
         "path": "resources/icon/stars.svg",
         "color": "yellow"
       },
@@ -101,6 +112,7 @@
     },
     {
       "value": {
+        "name": "scribble",
         "path": "resources/icon/scribble.svg",
         "color": "red"
       },
@@ -108,6 +120,7 @@
     },
     {
       "value": {
+        "name": "abstract",
         "path": "resources/icon/abstract.svg",
         "color": "black"
       },
@@ -115,6 +128,7 @@
     },
     {
       "value": {
+        "name": "none",
         "path": "resources/icon/empty.svg",
         "color": "transparent"
       },

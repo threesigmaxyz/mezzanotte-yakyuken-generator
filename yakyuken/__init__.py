@@ -1,6 +1,6 @@
 import click
 
-from yakyuken.comands import generate_command
+from yakyuken.comands import generate_command, jsonToBytes_command
 
 
 @click.group()
@@ -14,3 +14,4 @@ def cli():
 
 
 cli.add_command(generate_command)
+cli.add_command(jsonToBytes_command)

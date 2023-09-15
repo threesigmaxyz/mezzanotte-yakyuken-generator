@@ -5,6 +5,8 @@ from yakyuken.core.utils import (
     select_trait_value,
 )
 
+import json
+
 
 # Load config file.
 config = load_config("generator.config.json")
@@ -21,7 +23,7 @@ icon_paths = {
 }
 
 
-def generate_nft() -> str:
+def generate_nft(token_Id: int) -> str:
     """Generate an NFT."""
     # Select common trait values.
     background_color = select_trait_value(metadata["backgroundColors"])
@@ -50,6 +52,29 @@ def generate_nft() -> str:
     text_size = yak["fontSize"]
     text_location = select_trait_value(metadata["textLocations"])
 
+    data = {
+        "tokenId": token_Id,
+        "backgroundColors": background_color,
+        "baseFillColors": base_fill_color,
+        "initialShadowColors": initial_shadow_color,
+        "initialShadowBrightness": initial_shadow_brightness,
+        "finalShadowColors": final_shadow_color,
+        "finalShadowBrightness": final_shadow_brightness,
+        "glowTimes": glow_time,
+        "yaks": yak["name"],
+        "yakFillColors": yak_fill_color,
+        "hoverColors": yak_hover_color,
+        "icons": icon["name"],
+        "texts": text_content
+    }
+
+    # Specify the file path where you want to save the JSON data
+    file_path = "out/"+ str(token_Id) +".json"
+
+    # Write the data to the JSON file
+    with open(file_path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    
     # Generate SVG file content.
     nft = f"""<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="{yak["viewBox"]}"
     style="background-color:{background_color}"> 
@@ -93,3 +118,49 @@ def generate_nft() -> str:
     </svg>"""
 
     return nft
+
+
+
+def convert_json_to_bytes(json_file_path: str) -> (int, str):
+    dataBytes = {
+        "tokenId": None,
+        "backgroundColors": None,
+        "baseFillColors": None,
+        "initialShadowColors": None,
+        "initialShadowBrightness": None,
+        "finalShadowColors": None,
+        "finalShadowBrightness": None,
+        "glowTimes": None,
+        "yaks": None,
+        "yakFillColors": None,
+        "hoverColors": None,
+        "icons": None,
+        "texts": None
+    }
+
+    with open(json_file_path, "r") as json_file:
+        # Load the JSON data from the file into a Python dictionary or list
+        dataJson = json.load(json_file)
+
+    for key in metadata.keys():
+        for i, element in enumerate(metadata[key]):
+            if key in dataJson and dataJson[key] == element["value"]:
+                dataBytes[key] = str(hex(i))[2:] # so "0x" is not included in the string
+    
+    for i, yak in enumerate(yaks):
+        if dataJson["yaks"] == yak["value"]["name"]:
+            dataBytes["yaks"] = str(hex(i))[2:] # so "0x" is not included in the string
+
+    for i, icon in enumerate(icons):
+        if dataJson["icons"] == icon["value"]["name"]:
+            dataBytes["icons"] = str(hex(i))[2:] # so "0x" is not included in the string 
+    
+    dataBytes["tokenId"] = dataJson["tokenId"]
+
+    output = "0x" + dataBytes["glowTimes"] + dataBytes["backgroundColors"] + dataBytes["hoverColors"] + dataBytes["finalShadowColors"] + dataBytes["baseFillColors"] + dataBytes["yakFillColors"] + dataBytes["yaks"] + dataBytes["initialShadowColors"] + dataBytes["initialShadowBrightness"] + dataBytes["finalShadowBrightness"] + dataBytes["icons"] + dataBytes["texts"]
+    print(dataBytes)
+    print(output)
+    return (dataBytes["tokenId"], output)
+
+
+
