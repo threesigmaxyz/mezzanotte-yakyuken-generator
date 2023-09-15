@@ -256,17 +256,10 @@
       { "value": "red3", "weight": 2 },
       { "value": "yellow", "weight": 1 }
     ],
-    "iconLocations": [{ "value": "x=\"5%\" y=\"5%\"", "weight": 100 }],
     "texts": [
       { "value": "石", "weight": 33 },
       { "value": "紙", "weight": 33 },
       { "value": "はさみ", "weight": 34 }
-    ],
-    "textLocations": [
-      { "value": "\"start\" x=\"5%\" y=\"10%\"", "weight": 25 },
-      { "value": "\"end\" x=\"95%\" y=\"90%\"", "weight": 25 },
-      { "value": "\"end\" x=\"95%\" y=\"10%\"", "weight": 25 },
-      { "value": "\"start\" x=\"5%\" y=\"90%\"", "weight": 25 }
     ]
   }
 }

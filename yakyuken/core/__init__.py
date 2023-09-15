@@ -108,13 +108,10 @@ def generate_nft(token_Id: int) -> str:
         </style>  
         {yak_path}
 
-        <svg {icon_size} {icon_location}>
+        <svg {icon_size} x=\"5%\" y=\"5%\">
             {icon_path}
         </svg>
 
-        <text text-anchor={text_location} font-family="Helvetica" font-size="{text_size}" fill="white">
-            {text_content}
-        </text>
     </svg>"""
 
     return nft
@@ -161,6 +158,61 @@ def convert_json_to_bytes(json_file_path: str) -> (int, str):
     print(dataBytes)
     print(output)
     return (dataBytes["tokenId"], output)
+
+
+def regenerate_nft(json_file_path: str, tokenId: int) -> str:
+    with open(json_file_path, "r") as json_file:
+        # Load the JSON data from the file into a Python dictionary or list
+        dataJson = json.load(json_file)
+    print(dataJson)
+
+    # Generate SVG file content.
+    for yak in yaks:
+        if yak["value"]["name"] == dataJson["yaks"]:
+            relevant_yak = yak
+
+    for icon in icons:
+        if icon["value"]["name"] == dataJson["icons"]:
+            relevant_icon = icon
+
+    nft = f"""<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="{relevant_yak["value"]["viewBox"]}"
+    style="background-color:{dataJson["backgroundColors"]}"> 
+        <style>
+            @keyframes glow {{
+                0% {{
+                    filter: drop-shadow(16px 16px 20px {dataJson["initialShadowColors"]}) brightness({dataJson["initialShadowBrightness"]}%);
+                }}
+
+                to {{
+                    filter: drop-shadow(16px 16px 20px {dataJson["finalShadowColors"]}) brightness({dataJson["finalShadowBrightness"]}%);
+                }}
+            }}
+
+            path {{
+                fill: {dataJson["baseFillColors"]};
+                animation: glow {dataJson["glowTimes"]}s ease-in-out infinite alternate;
+            }}
+
+            .yak {{
+                fill: {dataJson["yakFillColors"]};
+            }}
+
+            .yak:hover {{
+                fill: {dataJson["hoverColors"]};
+            }}
+
+            .icon {{
+                fill: {relevant_icon["value"]["color"]};
+            }}
+        </style>  
+        {yak_paths[relevant_yak["value"]["path"]]}
+
+        <svg {relevant_yak["value"]["iconSize"]} x=\"5%\" y=\"5%\">
+            {icon_paths[relevant_icon["value"]["path"]]}
+        </svg>
+    </svg>"""
+
+    return nft
 
 
 
