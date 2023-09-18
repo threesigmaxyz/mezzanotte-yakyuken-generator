@@ -154,9 +154,19 @@ def convert_json_to_bytes(json_file_path: str) -> (int, str):
     
     dataBytes["tokenId"] = dataJson["tokenId"]
 
+    if int(dataBytes["glowTimes"], 16) <= 0xF:
+        dataBytes["glowTimes"] = "0" + dataBytes["glowTimes"]
+    
+    
+    if int(dataBytes["backgroundColors"],16) <= 0xF:
+        dataBytes["backgroundColors"] = "0" + dataBytes["backgroundColors"]
+    
+
     output = "0x" + dataBytes["glowTimes"] + dataBytes["backgroundColors"] + dataBytes["hoverColors"] + dataBytes["finalShadowColors"] + dataBytes["baseFillColors"] + dataBytes["yakFillColors"] + dataBytes["yaks"] + dataBytes["initialShadowColors"] + dataBytes["initialShadowBrightness"] + dataBytes["finalShadowBrightness"] + dataBytes["icons"] + dataBytes["texts"]
     print(dataBytes)
     print(output)
+    if(len(output) != 16):
+        print("ERROR: final bytes conversion does not have expected length - ", output)
     return (dataBytes["tokenId"], output)
 
 
@@ -166,6 +176,7 @@ def regenerate_nft(json_file_path: str, tokenId: int) -> str:
         dataJson = json.load(json_file)
     print(dataJson)
 
+    relevant_icon, relevant_yak = "", ""
     # Generate SVG file content.
     for yak in yaks:
         if yak["value"]["name"] == dataJson["yaks"]:
@@ -174,6 +185,10 @@ def regenerate_nft(json_file_path: str, tokenId: int) -> str:
     for icon in icons:
         if icon["value"]["name"] == dataJson["icons"]:
             relevant_icon = icon
+
+    if relevant_icon == "" or relevant_yak == "":
+        print("ERROR: Relevant Icon or Relevant Yak not recognized")
+        exit()
 
     nft = f"""<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="{relevant_yak["value"]["viewBox"]}"
     style="background-color:{dataJson["backgroundColors"]}"> 
