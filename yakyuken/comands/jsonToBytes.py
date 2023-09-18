@@ -32,8 +32,7 @@ def jsonToBytes_command(json_file: int, all_files:bool, out: click.Path) -> None
 
         # Filter for .json files
         json_files_list = [file for file in files if (file.endswith(".json") and "byte" not in file )]
-
-        print(json_files_list)
+        json_files_list = sorted(json_files_list)
         for file in json_files_list:
             (tokenId, byteRepresentation) = convert_json_to_bytes("out/" + file)
             jsonToDump[tokenId] = byteRepresentation
