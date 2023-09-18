@@ -25,7 +25,8 @@ from yakyuken.core import convert_json_to_bytes
 def jsonToBytes_command(json_file: int, all_files:bool, out: click.Path) -> None:
     if os.path.exists(out):
         os.remove(out)
-    jsonToDump = {}
+    nft = {"tokenId": "", "value": ""}
+    jsonToDump = []
     if all_files == True:
         # List all files in the folder
         files = os.listdir("out/")
@@ -34,13 +35,15 @@ def jsonToBytes_command(json_file: int, all_files:bool, out: click.Path) -> None
         json_files_list = [file for file in files if (file.endswith(".json") and "byte" not in file )]
         json_files_list = sorted(json_files_list)
         for file in json_files_list:
-            (tokenId, byteRepresentation) = convert_json_to_bytes("out/" + file)
-            jsonToDump[tokenId] = byteRepresentation
+            nft = {}
+            nft["tokenId"], nft["value"] = convert_json_to_bytes("out/" + file)
+            print(nft)
+            jsonToDump.append(nft)
         with open(out, "a") as file:
             json.dump(jsonToDump, file, indent=4)
     else:
         file_name = "out/" + str(json_file) + ".json"
-        (tokenId, byteRepresentation) = convert_json_to_bytes(file_name)
-        jsonToDump = {tokenId: byteRepresentation}
+        ( nft["tokenId"], nft["value"]) = convert_json_to_bytes(file_name)
+        jsonToDump.append(nft)
         with open(out, "a") as file:
             json.dump(jsonToDump, file, indent=4)
