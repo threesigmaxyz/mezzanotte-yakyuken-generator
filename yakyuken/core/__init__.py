@@ -174,7 +174,6 @@ def regenerate_nft(json_file_path: str, tokenId: int) -> str:
     with open(json_file_path, "r") as json_file:
         # Load the JSON data from the file into a Python dictionary or list
         dataJson = json.load(json_file)
-    print(dataJson)
 
     relevant_icon, relevant_yak = "", ""
     # Generate SVG file content.

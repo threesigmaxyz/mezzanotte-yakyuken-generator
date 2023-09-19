@@ -23,6 +23,7 @@ from yakyuken.core import regenerate_nft
 )
 def regenerate_command(json_file: int, dir: click.Path, all_files: bool) -> None:
     if all_files == True:
+        print("Regenarating all files")
         # List all files in the folder
         files = os.listdir(dir)
 
@@ -30,10 +31,10 @@ def regenerate_command(json_file: int, dir: click.Path, all_files: bool) -> None
         json_files_list = [file for file in files if (file.endswith(".json") and "byte" not in file )]
 
         for file in json_files_list:
+            print(f"Generating from {file}")
             token_Id = int(file.replace(".json", ""))
             newNft = regenerate_nft(dir + "/" + file,token_Id)
-
-            filepath = os.path.join(dir, f"{json_file}.svg")
+            filepath = os.path.join(dir, f"{token_Id}.svg")
             with open(filepath, "w") as f:
                 f.write(newNft)
     else:
