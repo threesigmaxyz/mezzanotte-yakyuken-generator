@@ -45,12 +45,9 @@ def generate_nft(token_Id: int) -> str:
     icon_path = icon_paths[icon["path"]]
     icon_color = yak_fill_color   # TODO icon["color"]
     icon_size = yak["iconSize"]
-    icon_location = select_trait_value(metadata["iconLocations"])
 
     # Select text trait values.
     text_content = select_trait_value(metadata["texts"])
-    text_size = yak["fontSize"]
-    text_location = select_trait_value(metadata["textLocations"])
 
     data = {
         "tokenId": token_Id,
