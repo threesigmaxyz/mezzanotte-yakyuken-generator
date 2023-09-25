@@ -3,6 +3,9 @@ from yakyuken.core.utils import (
     load_svg_path,
     parse_trait_values,
     select_trait_value,
+    get_match_regex,
+    get_yak,
+    get_icon
 )
 
 import json
@@ -43,7 +46,7 @@ def generate_nft(token_Id: int) -> str:
     # Select icon trait values.
     icon = select_trait_value(icons)
     icon_path = icon_paths[icon["path"]]
-    icon_color = icon["color"]
+    icon_color = yak_fill_color
     icon_size = yak["iconSize"]
 
     # Select text trait values.
@@ -158,7 +161,7 @@ def convert_json_to_bytes(json_file_path: str) -> (int, str):
     if int(dataBytes["backgroundColors"],16) <= 0xF:
         dataBytes["backgroundColors"] = "0" + dataBytes["backgroundColors"]
     
-
+    print(dataBytes["tokenId"])
     output = "0x" + dataBytes["glowTimes"] + dataBytes["backgroundColors"] + dataBytes["hoverColors"] + dataBytes["finalShadowColors"] + dataBytes["baseFillColors"] + dataBytes["yakFillColors"] + dataBytes["yaks"] + dataBytes["initialShadowColors"] + dataBytes["initialShadowBrightness"] + dataBytes["finalShadowBrightness"] + dataBytes["icons"] + dataBytes["texts"]
     print(dataBytes)
     print(output)
@@ -213,7 +216,7 @@ def regenerate_nft(json_file_path: str, tokenId: int) -> str:
             }}
 
             .icon {{
-                fill: {relevant_icon["value"]["color"]};
+                fill: {dataJson["yakFillColors"]};
             }}
         </style>  
         {yak_paths[relevant_yak["value"]["path"]]}
@@ -226,4 +229,21 @@ def regenerate_nft(json_file_path: str, tokenId: int) -> str:
     return nft
 
 
+def convert_from_svg_to_json(file_content: str, file_name: str) -> dict:
+    nft = {
+        "tokenId": int(file_name.strip("desired_out/").strip(".svg")),
+        "backgroundColors": get_match_regex(file_content, r'"background-color:(.*?)"'),
+        "baseFillColors": get_match_regex(file_content, r'path\s*{\s*fill:\s*([^;]+);'),
+        "initialShadowColors": get_match_regex(file_content, r'0%\s*{\s*filter:\s*drop-shadow\(16px 16px 20px ([^)]+)\)'),
+        "initialShadowBrightness": get_match_regex(file_content, r'brightness\((\d+)\%\);\s*}\s*to\s*{'),
+        "finalShadowColors": get_match_regex(file_content, r'to\s*{\s*filter:\s*drop-shadow\(16px 16px 20px ([^)]+)\)'),
+        "finalShadowBrightness": get_match_regex(file_content, r'brightness\((\d+)\%\);\s*}\s*}'),
+        "glowTimes": get_match_regex(file_content, r'animation:\s*glow\s*([^s]+)s'),
+        "yaks": get_yak(file_content),
+        "yakFillColors": get_match_regex(file_content, r'\.yak\s*{\s*fill:\s*([^;]+);'),
+        "hoverColors": get_match_regex(file_content, r'\.yak:hover\s*{\s*fill:\s*([^;]+);'),
+        "icons": get_icon(file_content),
+        "texts": get_match_regex(file_content, r'>([^<]+)</text>')
+    }
 
+    return nft
