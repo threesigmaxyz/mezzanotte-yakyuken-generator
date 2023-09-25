@@ -1,0 +1,15 @@
+{
+    "tokenId": 495,
+    "backgroundColors": "yellow",
+    "baseFillColors": "waterblue",
+    "initialShadowColors": "navy",
+    "initialShadowBrightness": "175",
+    "finalShadowColors": "white",
+    "finalShadowBrightness": "100",
+    "glowTimes": ".01",
+    "yaks": "focusedgirl",
+    "yakFillColors": "yellow",
+    "hoverColors": "coral",
+    "icons": "stars",
+    "texts": "\u306f\u3055\u307f"
+}

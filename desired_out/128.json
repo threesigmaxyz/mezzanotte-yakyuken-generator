@@ -1,0 +1,15 @@
+{
+    "tokenId": 128,
+    "backgroundColors": "linen",
+    "baseFillColors": "lightneon",
+    "initialShadowColors": "blue",
+    "initialShadowBrightness": "125",
+    "finalShadowColors": "blue",
+    "finalShadowBrightness": "200",
+    "glowTimes": ".9",
+    "yaks": "takechi",
+    "yakFillColors": "powderblue",
+    "hoverColors": "lightblue",
+    "icons": "stars",
+    "texts": "\u7d19"
+}

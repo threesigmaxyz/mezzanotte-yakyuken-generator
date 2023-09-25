@@ -1,0 +1,15 @@
+{
+    "tokenId": 25,
+    "backgroundColors": "red",
+    "baseFillColors": "yellow",
+    "initialShadowColors": "blue",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "yellow",
+    "finalShadowBrightness": "3000",
+    "glowTimes": "3",
+    "yaks": "takechi",
+    "yakFillColors": "navy",
+    "hoverColors": "lightblue",
+    "icons": "scribble",
+    "texts": "\u77f3"
+}

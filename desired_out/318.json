@@ -1,0 +1,15 @@
+{
+    "tokenId": 318,
+    "backgroundColors": "blue",
+    "baseFillColors": "yellow",
+    "initialShadowColors": "yellow",
+    "initialShadowBrightness": "300",
+    "finalShadowColors": "pink",
+    "finalShadowBrightness": "25",
+    "glowTimes": ".9",
+    "yaks": "focusedgirl",
+    "yakFillColors": "turqouise",
+    "hoverColors": "pink",
+    "icons": "none",
+    "texts": "\u306f\u3055\u307f"
+}

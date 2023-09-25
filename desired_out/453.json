@@ -1,0 +1,15 @@
+{
+    "tokenId": 453,
+    "backgroundColors": "deepskyblue",
+    "baseFillColors": "softpink",
+    "initialShadowColors": "red",
+    "initialShadowBrightness": "200",
+    "finalShadowColors": "blue",
+    "finalShadowBrightness": "200",
+    "glowTimes": ".3",
+    "yaks": "thinker",
+    "yakFillColors": "powderblue",
+    "hoverColors": "lightblue",
+    "icons": "scribble",
+    "texts": "\u306f\u3055\u307f"
+}

@@ -1,0 +1,15 @@
+{
+    "tokenId": 404,
+    "backgroundColors": "black",
+    "baseFillColors": "beige",
+    "initialShadowColors": "blue",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "white",
+    "finalShadowBrightness": "50",
+    "glowTimes": "4",
+    "yaks": "yak2",
+    "yakFillColors": "lightorange",
+    "hoverColors": "lightblue",
+    "icons": "none",
+    "texts": "\u7d19"
+}

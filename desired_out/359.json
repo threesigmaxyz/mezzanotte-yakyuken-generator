@@ -1,0 +1,15 @@
+{
+    "tokenId": 359,
+    "backgroundColors": "deepskyblue",
+    "baseFillColors": "lightneon",
+    "initialShadowColors": "cyan",
+    "initialShadowBrightness": "200",
+    "finalShadowColors": "red",
+    "finalShadowBrightness": "100",
+    "glowTimes": "5",
+    "yaks": "tennis",
+    "yakFillColors": "navy",
+    "hoverColors": "mintcream",
+    "icons": "scribble",
+    "texts": "\u306f\u3055\u307f"
+}
