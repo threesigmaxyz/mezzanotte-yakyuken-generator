@@ -1,0 +1,15 @@
+{
+    "tokenId": 242,
+    "backgroundColors": "yellow",
+    "baseFillColors": "black",
+    "initialShadowColors": "yellow",
+    "initialShadowBrightness": "25",
+    "finalShadowColors": "yellow",
+    "finalShadowBrightness": "3000",
+    "glowTimes": "6",
+    "yaks": "takechi",
+    "yakFillColors": "pink",
+    "hoverColors": "red",
+    "icons": "stars",
+    "texts": "\u306f\u3055\u307f"
+}

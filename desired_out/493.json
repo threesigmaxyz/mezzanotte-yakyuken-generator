@@ -1,0 +1,15 @@
+{
+    "tokenId": 493,
+    "backgroundColors": "linen",
+    "baseFillColors": "waterblue",
+    "initialShadowColors": "yellow",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "white",
+    "finalShadowBrightness": "200",
+    "glowTimes": ".3",
+    "yaks": "josei",
+    "yakFillColors": "neon",
+    "hoverColors": "lightblue",
+    "icons": "scribble",
+    "texts": "\u7d19"
+}

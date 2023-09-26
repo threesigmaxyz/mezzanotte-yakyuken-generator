@@ -1,0 +1,15 @@
+{
+    "tokenId": 455,
+    "backgroundColors": "mediumblue",
+    "baseFillColors": "softpink",
+    "initialShadowColors": "orange",
+    "initialShadowBrightness": "300",
+    "finalShadowColors": "blue",
+    "finalShadowBrightness": "200",
+    "glowTimes": "32",
+    "yaks": "sport",
+    "yakFillColors": "powderblue",
+    "hoverColors": "white",
+    "icons": "none",
+    "texts": "\u7d19"
+}

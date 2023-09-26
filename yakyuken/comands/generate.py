@@ -33,7 +33,7 @@ def generate_command(count: int, out: click.Path, seed: int) -> None:
 
     for i in tqdm.tqdm(range(count)):
         # Generate NFT.
-        nft = generate_nft()
+        nft = generate_nft(i)
 
         # Write NFT to file.
         filepath = os.path.join(out, f"{i}.svg")

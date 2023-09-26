@@ -1,0 +1,15 @@
+{
+    "tokenId": 421,
+    "backgroundColors": "deepskyblue",
+    "baseFillColors": "mediumspringgreen",
+    "initialShadowColors": "orange",
+    "initialShadowBrightness": "300",
+    "finalShadowColors": "paleolivegreen",
+    "finalShadowBrightness": "100",
+    "glowTimes": "5.5",
+    "yaks": "takechi",
+    "yakFillColors": "pastel",
+    "hoverColors": "lightblue",
+    "icons": "stars",
+    "texts": "\u7d19"
+}

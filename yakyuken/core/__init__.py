@@ -3,7 +3,12 @@ from yakyuken.core.utils import (
     load_svg_path,
     parse_trait_values,
     select_trait_value,
+    get_match_regex,
+    get_yak,
+    get_icon
 )
+
+import json
 
 
 # Load config file.
@@ -21,7 +26,7 @@ icon_paths = {
 }
 
 
-def generate_nft() -> str:
+def generate_nft(token_Id: int) -> str:
     """Generate an NFT."""
     # Select common trait values.
     background_color = select_trait_value(metadata["backgroundColors"])
@@ -41,15 +46,35 @@ def generate_nft() -> str:
     # Select icon trait values.
     icon = select_trait_value(icons)
     icon_path = icon_paths[icon["path"]]
-    icon_color = yak_fill_color   # TODO icon["color"]
+    icon_color = yak_fill_color
     icon_size = yak["iconSize"]
-    icon_location = select_trait_value(metadata["iconLocations"])
 
     # Select text trait values.
     text_content = select_trait_value(metadata["texts"])
-    text_size = yak["fontSize"]
-    text_location = select_trait_value(metadata["textLocations"])
 
+    data = {
+        "tokenId": token_Id,
+        "backgroundColors": background_color,
+        "baseFillColors": base_fill_color,
+        "initialShadowColors": initial_shadow_color,
+        "initialShadowBrightness": initial_shadow_brightness,
+        "finalShadowColors": final_shadow_color,
+        "finalShadowBrightness": final_shadow_brightness,
+        "glowTimes": glow_time,
+        "yaks": yak["name"],
+        "yakFillColors": yak_fill_color,
+        "hoverColors": yak_hover_color,
+        "icons": icon["name"],
+        "texts": text_content
+    }
+
+    # Specify the file path where you want to save the JSON data
+    file_path = "out/"+ str(token_Id) +".json"
+
+    # Write the data to the JSON file
+    with open(file_path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    
     # Generate SVG file content.
     nft = f"""<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="{yak["viewBox"]}"
     style="background-color:{background_color}"> 
@@ -83,13 +108,142 @@ def generate_nft() -> str:
         </style>  
         {yak_path}
 
-        <svg {icon_size} {icon_location}>
+        <svg {icon_size} x=\"5%\" y=\"5%\">
             {icon_path}
         </svg>
 
-        <text text-anchor={text_location} font-family="Helvetica" font-size="{text_size}" fill="white">
-            {text_content}
-        </text>
     </svg>"""
+
+    return nft
+
+
+
+def convert_json_to_bytes(json_file_path: str) -> (int, str):
+    dataBytes = {
+        "tokenId": None,
+        "backgroundColors": None,
+        "baseFillColors": None,
+        "initialShadowColors": None,
+        "initialShadowBrightness": None,
+        "finalShadowColors": None,
+        "finalShadowBrightness": None,
+        "glowTimes": None,
+        "yaks": None,
+        "yakFillColors": None,
+        "hoverColors": None,
+        "icons": None,
+        "texts": None
+    }
+
+    with open(json_file_path, "r") as json_file:
+        # Load the JSON data from the file into a Python dictionary or list
+        dataJson = json.load(json_file)
+
+    for key in metadata.keys():
+        for i, element in enumerate(metadata[key]):
+            if key in dataJson and dataJson[key] == element["value"]:
+                dataBytes[key] = str(hex(i))[2:] # so "0x" is not included in the string
+    
+    for i, yak in enumerate(yaks):
+        if dataJson["yaks"] == yak["value"]["name"]:
+            dataBytes["yaks"] = str(hex(i))[2:] # so "0x" is not included in the string
+
+    for i, icon in enumerate(icons):
+        if dataJson["icons"] == icon["value"]["name"]:
+            dataBytes["icons"] = str(hex(i))[2:] # so "0x" is not included in the string 
+    
+    dataBytes["tokenId"] = dataJson["tokenId"]
+
+    if int(dataBytes["glowTimes"], 16) <= 0xF:
+        dataBytes["glowTimes"] = "0" + dataBytes["glowTimes"]
+    
+    
+    if int(dataBytes["backgroundColors"],16) <= 0xF:
+        dataBytes["backgroundColors"] = "0" + dataBytes["backgroundColors"]
+    
+    print(dataBytes["tokenId"])
+    output = "0x" + dataBytes["glowTimes"] + dataBytes["backgroundColors"] + dataBytes["hoverColors"] + dataBytes["finalShadowColors"] + dataBytes["baseFillColors"] + dataBytes["yakFillColors"] + dataBytes["yaks"] + dataBytes["initialShadowColors"] + dataBytes["initialShadowBrightness"] + dataBytes["finalShadowBrightness"] + dataBytes["icons"] + dataBytes["texts"]
+    print(dataBytes)
+    print(output)
+    if(len(output) != 16):
+        print("ERROR: final bytes conversion does not have expected length - ", output)
+    return (dataBytes["tokenId"], output)
+
+
+def regenerate_nft(json_file_path: str, tokenId: int) -> str:
+    with open(json_file_path, "r") as json_file:
+        # Load the JSON data from the file into a Python dictionary or list
+        dataJson = json.load(json_file)
+
+    relevant_icon, relevant_yak = "", ""
+    # Generate SVG file content.
+    for yak in yaks:
+        if yak["value"]["name"] == dataJson["yaks"]:
+            relevant_yak = yak
+
+    for icon in icons:
+        if icon["value"]["name"] == dataJson["icons"]:
+            relevant_icon = icon
+
+    if relevant_icon == "" or relevant_yak == "":
+        print("ERROR: Relevant Icon or Relevant Yak not recognized")
+        exit()
+
+    nft = f"""<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="{relevant_yak["value"]["viewBox"]}"
+    style="background-color:{dataJson["backgroundColors"]}"> 
+        <style>
+            @keyframes glow {{
+                0% {{
+                    filter: drop-shadow(16px 16px 20px {dataJson["initialShadowColors"]}) brightness({dataJson["initialShadowBrightness"]}%);
+                }}
+
+                to {{
+                    filter: drop-shadow(16px 16px 20px {dataJson["finalShadowColors"]}) brightness({dataJson["finalShadowBrightness"]}%);
+                }}
+            }}
+
+            path {{
+                fill: {dataJson["baseFillColors"]};
+                animation: glow {dataJson["glowTimes"]}s ease-in-out infinite alternate;
+            }}
+
+            .yak {{
+                fill: {dataJson["yakFillColors"]};
+            }}
+
+            .yak:hover {{
+                fill: {dataJson["hoverColors"]};
+            }}
+
+            .icon {{
+                fill: {dataJson["yakFillColors"]};
+            }}
+        </style>  
+        {yak_paths[relevant_yak["value"]["path"]]}
+
+        <svg {relevant_yak["value"]["iconSize"]} x=\"5%\" y=\"5%\">
+            {icon_paths[relevant_icon["value"]["path"]]}
+        </svg>
+    </svg>"""
+
+    return nft
+
+
+def convert_from_svg_to_json(file_content: str, file_name: str) -> dict:
+    nft = {
+        "tokenId": int(file_name.strip("desired_out/").strip(".svg")),
+        "backgroundColors": get_match_regex(file_content, r'"background-color:(.*?)"'),
+        "baseFillColors": get_match_regex(file_content, r'path\s*{\s*fill:\s*([^;]+);'),
+        "initialShadowColors": get_match_regex(file_content, r'0%\s*{\s*filter:\s*drop-shadow\(16px 16px 20px ([^)]+)\)'),
+        "initialShadowBrightness": get_match_regex(file_content, r'brightness\((\d+)\%\);\s*}\s*to\s*{'),
+        "finalShadowColors": get_match_regex(file_content, r'to\s*{\s*filter:\s*drop-shadow\(16px 16px 20px ([^)]+)\)'),
+        "finalShadowBrightness": get_match_regex(file_content, r'brightness\((\d+)\%\);\s*}\s*}'),
+        "glowTimes": get_match_regex(file_content, r'animation:\s*glow\s*([^s]+)s'),
+        "yaks": get_yak(file_content),
+        "yakFillColors": get_match_regex(file_content, r'\.yak\s*{\s*fill:\s*([^;]+);'),
+        "hoverColors": get_match_regex(file_content, r'\.yak:hover\s*{\s*fill:\s*([^;]+);'),
+        "icons": get_icon(file_content),
+        "texts": get_match_regex(file_content, r'>([^<]+)</text>')
+    }
 
     return nft

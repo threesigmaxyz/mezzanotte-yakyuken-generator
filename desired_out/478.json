@@ -1,0 +1,15 @@
+{
+    "tokenId": 478,
+    "backgroundColors": "yellow",
+    "baseFillColors": "mediumspringgreen",
+    "initialShadowColors": "white",
+    "initialShadowBrightness": "50",
+    "finalShadowColors": "pink",
+    "finalShadowBrightness": "125",
+    "glowTimes": ".5",
+    "yaks": "yak2",
+    "yakFillColors": "neon",
+    "hoverColors": "pink",
+    "icons": "none",
+    "texts": "\u77f3"
+}

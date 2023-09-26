@@ -1,0 +1,15 @@
+{
+    "tokenId": 530,
+    "backgroundColors": "lemonchiffon",
+    "baseFillColors": "plum",
+    "initialShadowColors": "orange",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "paleolivegreen",
+    "finalShadowBrightness": "5000",
+    "glowTimes": ".5",
+    "yaks": "sport",
+    "yakFillColors": "navy",
+    "hoverColors": "lavenderblush",
+    "icons": "none",
+    "texts": "\u306f\u3055\u307f"
+}

@@ -1,0 +1,15 @@
+{
+    "tokenId": 76,
+    "backgroundColors": "blue",
+    "baseFillColors": "blue",
+    "initialShadowColors": "orange",
+    "initialShadowBrightness": "4000",
+    "finalShadowColors": "pear",
+    "finalShadowBrightness": "50",
+    "glowTimes": "6",
+    "yaks": "christine",
+    "yakFillColors": "lightorange",
+    "hoverColors": "yellow",
+    "icons": "stars",
+    "texts": "\u306f\u3055\u307f"
+}

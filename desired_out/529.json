@@ -1,0 +1,15 @@
+{
+    "tokenId": 529,
+    "backgroundColors": "aquamarine",
+    "baseFillColors": "blue",
+    "initialShadowColors": "cyan",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "white",
+    "finalShadowBrightness": "25",
+    "glowTimes": "3",
+    "yaks": "tennis",
+    "yakFillColors": "blue",
+    "hoverColors": "lightblue",
+    "icons": "stars",
+    "texts": "\u77f3"
+}

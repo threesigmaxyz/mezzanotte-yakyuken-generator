@@ -1,0 +1,15 @@
+{
+    "tokenId": 120,
+    "backgroundColors": "red",
+    "baseFillColors": "wintergreen",
+    "initialShadowColors": "blue",
+    "initialShadowBrightness": "25",
+    "finalShadowColors": "pear",
+    "finalShadowBrightness": "125",
+    "glowTimes": ".9",
+    "yaks": "sport",
+    "yakFillColors": "neon",
+    "hoverColors": "lightblue",
+    "icons": "none",
+    "texts": "\u7d19"
+}

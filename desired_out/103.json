@@ -1,0 +1,15 @@
+{
+    "tokenId": 103,
+    "backgroundColors": "deepskyblue",
+    "baseFillColors": "beige",
+    "initialShadowColors": "blue",
+    "initialShadowBrightness": "150",
+    "finalShadowColors": "blue",
+    "finalShadowBrightness": "5000",
+    "glowTimes": ".2",
+    "yaks": "josei",
+    "yakFillColors": "honeydew",
+    "hoverColors": "goldenrod",
+    "icons": "none",
+    "texts": "\u77f3"
+}

@@ -1,0 +1,15 @@
+{
+    "tokenId": 64,
+    "backgroundColors": "lemonchiffon",
+    "baseFillColors": "black",
+    "initialShadowColors": "orange",
+    "initialShadowBrightness": "100",
+    "finalShadowColors": "white",
+    "finalShadowBrightness": "25",
+    "glowTimes": "5",
+    "yaks": "yak2",
+    "yakFillColors": "blue",
+    "hoverColors": "pink",
+    "icons": "none",
+    "texts": "\u306f\u3055\u307f"
+}

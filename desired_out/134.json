@@ -1,0 +1,15 @@
+{
+    "tokenId": 134,
+    "backgroundColors": "blue",
+    "baseFillColors": "thistle",
+    "initialShadowColors": "red",
+    "initialShadowBrightness": "1",
+    "finalShadowColors": "paleolivegreen",
+    "finalShadowBrightness": "200",
+    "glowTimes": "2",
+    "yaks": "tennis",
+    "yakFillColors": "lavenderblush",
+    "hoverColors": "goldenrod",
+    "icons": "stars",
+    "texts": "\u306f\u3055\u307f"
+}
